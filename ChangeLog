@@ -1,0 +1,26 @@
+2005-11-03  Louis Bavoil  <bavoil@sci.utah.edu>
+
+	* src/vbo.cpp: Fixed bug: with Linux NVIDIA's driver,
+	glBufferData() do not do a deep copy, so we need to keep the data
+	in memory until the glVertexPointer() call.
+
+	* src/vbo.cpp: Print the size of the position VBOs in KB.
+	
+	* src/vbo.hpp: Added more data types for normals and colors.
+
+	* src/main.cpp: Disabled vertex normals and colors in immediate
+	mode (-method IM) to make it easier to change GL types.
+	
+2005-04-05  Louis Bavoil  <bavoil@sci.utah.edu>
+
+	* src/main.cpp: Fixed bugs: Set default max_fps_rel_diff to 0.1
+	instead of 0.25.  Check for fps1 > fps0. Added glFinish() before
+	glutSwapBuffers(). Fixed Mac headers.
+	
+	* src/main.cpp: Added command-line option -texcoords N to allow to
+	load a given number of 2D GL_FLOAT texture coordinates per vertex.
+
+	* src/scene.cpp: Added support for texcoords for the rendering methods
+	IM, VA, and DL.
+
+	* src/Makefile.mac: New file.
