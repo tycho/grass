@@ -59,7 +59,7 @@ void VBO::update(GLenum mode,
 
      static bool init = false;
      if (!init) {
-	  printf("VBO Size: %d KB (%d vertices)\n", v->size()*sizeof(Point_3f)/1024, v->size());
+	  printf("VBO Size: %lu KB (%lu vertices)\n", v->size()*sizeof(Point_3f)/1024, v->size());
 	  init = true;
      }
 

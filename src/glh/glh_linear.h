@@ -61,12 +61,6 @@ glh_linear.h
 # define GLH_REAL_NAMESPACE ns_float
 #endif
 
-#ifdef _WIN32
-# define TEMPLATE_FUNCTION
-#else
-# define TEMPLATE_FUNCTION <>
-#endif
-
 #define     GLH_QUATERNION_NORMALIZATION_THRESHOLD  64
 
 #define     GLH_RAD_TO_DEG      GLH_REAL(57.2957795130823208767981548141052)
@@ -176,11 +170,6 @@ namespace glh
 		vec<N,T> operator * ( T d) const
 		{ vec<N,T> rt(*this); return rt *= d; }
 		
-		friend bool operator == TEMPLATE_FUNCTION ( const vec<N,T> &v1, const vec<N,T> &v2 );
-		friend bool operator != TEMPLATE_FUNCTION ( const vec<N,T> &v1, const vec<N,T> &v2 );
-		
-		
-	//protected:
 		T v[N];
 	};
 	

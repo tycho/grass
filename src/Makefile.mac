@@ -1,10 +1,10 @@
 
-OPTS = -c -O2 -Wall -Wno-non-virtual-dtor -DMAC
+OPTS = -O2 -Wall -Wno-non-virtual-dtor -DMAC -c
 
-CC = g++
+CC = g++ -arch i386 -arch ppc -arch x86_64 -arch ppc64
 
-GL_INC = -I../../glew/include
-GL_LIBS = -framework OpenGL -framework GLUT -lobjc -lGLEW -L../../glew/lib
+GL_INC = -I/opt/local/include
+GL_LIBS = -framework OpenGL -framework GLUT -lobjc -lGLEW -L/opt/local/lib
 LLDLIBS =  $(GL_LIBS) -L/usr/X11R6/lib
 OBJECTS = main.o math.o scene.o vbo.o
 TARGET = ../bin/grass_benchmark.mac
