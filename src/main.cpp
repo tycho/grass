@@ -22,6 +22,8 @@
 #include "main.h"
 #include "math.h"
 #include "scene.h"
+#include <stdlib.h>
+#include <string.h>
 #include <iostream>
 #include <vector>
 #include <assert.h>
